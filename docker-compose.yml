@@ -1,0 +1,41 @@
+version: '1'
+services:
+  frontend:
+    build:
+      context: https://github.com/khyatijha777/indian-open-mic-ui
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    environment:
+      - REACT_APP_API_URL=${REACT_APP_API_URL}
+      - PORT=3000
+
+  backend:
+    build:
+      context: https://github.com/khyatijha777/indian-open-mic-api
+    ports:
+      - "9000:9000"
+    environment:
+      - NODE_ENV=development
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - DB_USERNAME=${DB_USERNAME}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME}
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_REGION=${AWS_REGION}
+      - AWS_BUCKET_NAME=${AWS_BUCKET_NAME}
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+      - GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
+      - GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET}
+      - GOOGLE_REFRESH_TOKEN=${GOOGLE_REFRESH_TOKEN}
+      - GOOGLE_ACCESS_TOKEN=${GOOGLE_ACCESS_TOKEN}
+      - GOOGLE_TOKEN_TYPE=${GOOGLE_TOKEN_TYPE}
+      - GOOGLE_SCOPE=${GOOGLE_SCOPE}
+      - JWT_SECRET=${JWT_SECRET}
+      - JWT_EXPIRATION=${JWT_EXPIRATION}
+      - NODE_ENV=${NODE_ENV}
+      - PORT=9000
+      - NODE_OPTIONS=${NODE_OPTIONS}
