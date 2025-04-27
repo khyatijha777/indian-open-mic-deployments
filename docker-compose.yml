@@ -2,7 +2,7 @@ version: '1'
 services:
   frontend:
     build:
-      context: https://github.com/khyatijha777/indian-open-mic-ui
+       context: ./indian-open-mic-ui
     ports:
       - "3000:3000"
     depends_on:
@@ -13,7 +13,7 @@ services:
 
   backend:
     build:
-      context: https://github.com/khyatijha777/indian-open-mic-api
+      context: ./indian-open-mic-api
     ports:
       - "9000:9000"
     environment:
