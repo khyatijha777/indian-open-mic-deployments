@@ -2,18 +2,16 @@ version: '1'
 services:
   frontend:
     build:
-       context: ./indian-open-mic-ui
+      image: khyatijha777/indian-open-mic-ui:latest
     ports:
       - "3000:3000"
     depends_on:
       - backend
-    environment:
-      - REACT_APP_API_URL=${REACT_APP_API_URL}
-      - PORT=3000
+    
 
   backend:
     build:
-      context: ./indian-open-mic-api
+      image: khyatijha777/indian-open-mic-api:latest
     ports:
       - "9000:9000"
     environment:
