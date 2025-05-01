@@ -20,6 +20,8 @@ git clone https://github.com/khyatijha777/indian-open-mic-ui.git
 # clone backend
 git clone https://github.com/khyatijha777/indian-open-mic-api.git
 
+# Download .env.production from S3
+aws s3 cp s3://indiaopenmic-media-uploads/.env .env
 
 # Build fresh images
 docker-compose build
