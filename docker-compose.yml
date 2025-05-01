@@ -1,8 +1,7 @@
 version: '1'
 services:
   frontend:
-    build:
-      image: khyatijha777/indian-open-mic-ui:latest
+    image: khyatijha777/indian-open-mic-ui:latest
     ports:
       - "3000:3000"
     depends_on:
@@ -10,8 +9,7 @@ services:
     
 
   backend:
-    build:
-      image: khyatijha777/indian-open-mic-api:latest
+    image: khyatijha777/indian-open-mic-api:latest
     ports:
       - "9000:9000"
     environment:
